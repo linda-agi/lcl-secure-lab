@@ -1,0 +1,9 @@
+# LCL Corp. Public Security Policy
+node_modules/
+.env
+*.key
+*.pem
+/auth/
+/configs/secrets.cfg
+*.log
+.DS_Store
