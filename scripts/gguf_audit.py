@@ -10,10 +10,19 @@ def scan_gguf(file_path):
         
         print(f"[+] Found {len(reader.tensors)} tensors and {len(reader.fields)} metadata fields.")
         
+        # Debug: List all fields
+        for field in reader.fields:
+            print(f"  Field: {field}")
+
         # Check for Chat Templates (Common SSTI vector)
         template_key = "tokenizer.chat_template"
         if template_key in reader.fields:
-            template_val = reader.fields[template_key].parts[0].tobytes().decode("utf-8", "ignore")
+            field = reader.fields[template_key]
+            # Handle different GGUF metadata formats
+            try:
+                template_val = field.parts[-1].tobytes().decode("utf-8")
+            except:
+                template_val = str(field.parts[-1])
             print(f"[!] WARNING: Found Chat Template metadata.")
             print(f"--- TEMPLATE START ---\n{template_val}\n--- TEMPLATE END ---")
             
