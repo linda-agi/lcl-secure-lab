@@ -16,6 +16,9 @@ It provides a dedicated, high-isolation environment for analyzing AI-related vul
     - `setup_lab.sh`: Automated dependency installer.
     - `run_isolated.sh`: NSJail execution wrapper.
     - `gguf_audit.py`: Semantic metadata scanner for GGUF model files.
+- `/examples`: Proof-of-Concept and testing scripts.
+    - `poc_ssti_gguf.py`: Generates a GGUF file with a simulated SSTI payload.
+    - `test_isolation.py`: Verifies sandbox restrictions (network, filesystem).
 - `/audit`: (Local only) Results and forensic reports.
 
 ## 🚀 Getting Started
@@ -32,10 +35,18 @@ python3 scripts/gguf_audit.py /path/to/your/model.gguf
 
 # 4. Run an untrusted script in isolation
 bash scripts/run_isolated.sh python3 malicious_poc.py
+
+# 5. Verify the sandbox with an isolation test
+python3 examples/test_isolation.py
 ```
 
-## 🤝 Community & Contribution
-This project is part of the **Linda Firewall** ecosystem. We welcome contributions from security researchers and AI developers.
+## 🛠️ Community Contributions
+We encourage researchers to contribute:
+- **New PoC Scripts:** Add examples of novel LLM attack vectors to `/examples`.
+- **Hardened Configs:** Improve `configs/hardened_nsjail.cfg` for better security/performance.
+- **Audit Rules:** Add detection patterns to `scripts/gguf_audit.py`.
+
+Please ensure all "Internal" or "Live Experiment" data is kept in the `workspace/` directory, which is excluded from version control.
 
 ---
 *Maintained by the LCL Corp. Engineering Team.*
