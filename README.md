@@ -5,10 +5,12 @@
 It provides a dedicated, high-isolation environment for analyzing AI-related vulnerabilities, specifically targeting LLM exploit crafting and malicious model payload (e.g., GGUF, ONNX) execution.
 
 ## ⚖️ Disclaimer
-This project is intended for **authorized security research and educational purposes only**. 
-LINDA Cyber Legion (LCL) Corp. and the project contributors are not responsible for any misuse, damage, or illegal activities performed using the tools and configurations provided in this repository. 
-Unauthorized testing or attacking of individuals, organizations, or systems without explicit prior permission is strictly prohibited and may result in legal consequences.
-Use this laboratory responsibly within a controlled and legal environment.
+> [!CAUTION]
+> **WARNING: FOR AUTHORIZED SECURITY RESEARCH AND EDUCATIONAL PURPOSES ONLY.**
+> 
+> LINDA Cyber Legion (LCL) Corp. and the project contributors are not responsible for any misuse, damage, or illegal activities performed using the tools and configurations provided in this repository. 
+> Unauthorized testing or attacking of individuals, organizations, or systems without explicit prior permission is strictly prohibited and may result in legal consequences.
+> **Use this laboratory responsibly within a controlled and legal environment.**
 
 ## 🛡️ Security Features
 - **OS-Level Isolation:** Utilizing Linux namespaces (NSJail/Bubblewrap) to create a "Digital Hazmat Suit".
