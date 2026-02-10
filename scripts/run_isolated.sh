@@ -42,7 +42,13 @@ sudo nsjail -Mo \
     --bindmount_ro /sbin:/sbin \
     --bindmount /tmp \
     --env PATH=$PATH \
-    --net_bin_all \
+    --disable_network \
+    --clone_newnet \
+    --clone_newuser \
+    --clone_newns \
+    --clone_newpid \
+    --clone_newipc \
+    --clone_newuts \
     -- $COMMAND
 
 echo "[LSL] Execution finished."
